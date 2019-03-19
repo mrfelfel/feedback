@@ -1,0 +1,211 @@
+:root{
+    --body-color: #f8f8f8;
+
+    --feedback-bg-color: #fff;
+}
+
+body{
+    background-color: var(--body-color);
+    margin: 0;
+}
+
+div#feedback{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+}
+
+div#feedback div.button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--feedback-bg-color);
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+div#feedback div.button:hover{
+    transform: scale(1.1);
+    transition: transform .3s;
+}
+
+div#feedback:not(.enable) div.content,
+div#feedback.enable div.button{
+    display: none;
+}
+
+div#feedback.enable{
+    width: 350px;
+    height: 180px;
+    background-color: var(--feedback-bg-color);
+    border-radius: .5rem;
+    direction: rtl;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    animation: ShowFeedBack .3s;
+}
+
+div#feedback.enable:not(.content) div.content{
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+
+div#feedback.enable.content div.content{
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+div#feedback.message{
+    height: 220px;
+}
+
+div#feedback div.content div.head{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+div#feedback div.content div.head svg{
+    width: 20px;
+    height: 20px;
+}
+
+div#feedback p.title{
+    user-select: none;
+    margin: 10px 20px;
+    margin-top: 50px;
+}
+
+div#feedback.message p.title,
+div#feedback.message div.content div.head{
+    display: none;
+}
+
+div#feedback div.emojis{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+div#feedback div.emojis div.emoji{
+    margin: 0 6px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+div#feedback div.emojis div.emoji svg{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+div#feedback div.emojis div.emoji:hover svg{
+    transform: scale(1.2);
+    transition: all .1s;
+}
+
+div#feedback div.emojis div.emoji span{
+    font-size: .7rem;
+    margin-top: -10px;
+    opacity: 0;
+    transition: margin-top .3s, opacity .3s;
+}
+
+div#feedback div.emojis div.emoji:hover span{
+    opacity: 1;
+    margin-top: 10px;
+    transition: margin-top .3s, opacity .3s;
+}
+
+div#feedback.message div.emojis div.emoji span{
+    display: none;
+}
+
+div#feedback.message div.emojis div.emoji svg{
+    filter: grayscale(30%);
+}
+
+div#feedback.message div.emojis div.emoji:hover svg,
+div#feedback.message div.emojis div.emoji.focus svg{
+    filter: grayscale(0%);
+}
+
+div#feedback.message div.emojis div.emoji.focus svg{
+    transform: scale(1.1);
+}
+
+div#feedback div.input textarea{
+    margin-right: 15px;
+    width: calc(100% - 50px);
+    height: 65px;
+    resize: none;
+    outline: none;
+    padding: 10px;
+    border-radius: .5rem;
+    border: 1px solid rgb(158, 158, 158);
+    margin-top: 20px;
+}
+
+div#feedback div.content button{
+    border: none;
+    outline: none;
+    float: left;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5حx;
+    cursor: pointer;
+    height: 35px;
+    width: 70px;
+    border-radius: .3rem;
+    background-color: transparent;
+    transition: background-color .3s;
+}
+
+div#feedback div.content button:hover{
+    background-color: rgba(0, 0, 0, .1);
+    transition: background-color .3s;
+}
+
+div#feedback div.content button.send{
+    margin-left: 20px !important;
+}
+
+div#feedback:not(.message) div.input{
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    transition: all .3s;
+}
+
+div#feedback.message div.input{
+    opacity: 1;
+    pointer-events: all;
+    height: auto;
+    transition: all .3s;
+}
+
+
+@keyframes ShowFeedBack{
+    0%{
+        width: 45px;
+        height: 45px;
+    }
+    100%{
+        width: 350px;
+        height: 180px;
+    }
+}
