@@ -1,10 +1,10 @@
 
+let loveIndex = 0;
 
 
 document.addEventListener("DOMContentLoaded", function(){
     // Handler when the DOM is fully loaded
 
-    let loveIndex = 0;
 
     var head  = document.getElementsByTagName('head')[0];
     var body  = document.querySelector('body');
