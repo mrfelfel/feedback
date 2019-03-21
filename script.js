@@ -288,6 +288,9 @@ document.addEventListener("DOMContentLoaded", function(){
 }
 
 function ShowFeedBack(){
+    loveIndex = 0;
+    document.querySelectorAll("div#feedback div.emojis div.emoji").forEach(emoji=>emoji.classList.remove('focus'))
+    document.getElementById('feedback').classList.remove('message')
     document.getElementById('feedback').classList.add('enable');
     setTimeout(() => {
         document.getElementById('feedback').classList.add('content');

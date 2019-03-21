@@ -11,8 +11,7 @@ body{
 
 div#feedback{
     position: fixed;
-    bottom: 40px;
-    right: 40px;
+    transition: all .3s;
 }
 
 div#feedback div.button{
@@ -40,7 +39,6 @@ div#feedback.enable div.button{
 }
 
 div#feedback.enable{
-    width: 350px;
     height: 180px;
     background-color: var(--feedback-bg-color);
     border-radius: .5rem;
@@ -49,6 +47,7 @@ div#feedback.enable{
     display: flex;
     flex-direction: column;
     animation: ShowFeedBack .3s;
+    transition: all .3s;
 }
 
 div#feedback.enable:not(.content) div.content{
@@ -97,18 +96,15 @@ div#feedback div.emojis{
 }
 
 div#feedback div.emojis div.emoji{
-    margin: 0 6px;
-    width: 40px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
+    transition: all .3s;
 }
 
 div#feedback div.emojis div.emoji svg{
-    width: 35px;
-    height: 35px;
     cursor: pointer;
     transition: all .3s;
 }
@@ -199,13 +195,67 @@ div#feedback.message div.input{
 }
 
 
-@keyframes ShowFeedBack{
-    0%{
-        width: 45px;
-        height: 45px;
+@media only screen and (min-width: 601px) {
+    div#feedback{
+        bottom: 40px;
+        right: 40px;
     }
-    100%{
+
+    div#feedback.enable{
         width: 350px;
-        height: 180px;
+    }
+
+    div#feedback div.emojis div.emoji{
+        margin: 0 6px;
+        width: 40px;
+    }
+
+    div#feedback div.emojis div.emoji svg{
+        width: 35px;
+        height: 35px;
+    }
+
+    @keyframes ShowFeedBack{
+        0%{
+            width: 45px;
+            height: 45px;
+        }
+        100%{
+            width: 350px;
+            height: 180px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    div#feedback{
+        bottom: 20px;
+        right: 20px;
+    }
+
+    div#feedback.enable{
+        width: calc(100vw - 40px);
+    }
+
+    div#feedback div.emojis div.emoji{
+        margin: 0 3px;
+        width: 38px;
+        margin-top: 5px;
+    }
+
+    div#feedback div.emojis div.emoji svg{
+        width: 30px;
+        height: 30px;
+    }
+
+    @keyframes ShowFeedBack{
+        0%{
+            width: 45px;
+            height: 45px;
+        }
+        100%{
+            width: calc(100vw - 40px);
+            height: 180px;
+        }
     }
 }
