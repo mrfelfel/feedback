@@ -210,6 +210,33 @@ div#feedback.message div.input{
 }
 
 
+div#toast{
+    position: fixed;
+    bottom: -50px;
+    padding: 5px 20px;
+    border-radius: 3rem;
+    opacity: 0;
+    font-size: .9rem;
+    z-index: 11;
+    text-align: center;
+    background-color: rgb(40,199,111);
+    box-shadow: 0 10px 10px -5px rgba(40,199,111, .3);
+    color: #fff;
+    transition: all .3s;
+}
+
+div#toast.show{
+    bottom: 20px;
+    opacity: 1;
+    transition: all .3s;
+}
+
+div#toast pre{
+    margin: 0;
+}
+
+
+
 @media only screen and (min-width: 601px) {
     div#feedback{
         bottom: 40px;
@@ -228,6 +255,12 @@ div#feedback.message div.input{
     div#feedback div.emojis div.emoji svg{
         width: 35px;
         height: 35px;
+    }
+
+    div#toast{
+        right: 50%;
+        transform: translateX(50%);
+        transition: all .3s;
     }
 
     @keyframes ShowFeedBack{
@@ -261,6 +294,12 @@ div#feedback.message div.input{
     div#feedback div.emojis div.emoji svg{
         width: 30px;
         height: 30px;
+    }
+
+    div#toast{
+        left: 10px;
+        right: 10px;
+        transition: all .3s;
     }
 
     @keyframes ShowFeedBack{
