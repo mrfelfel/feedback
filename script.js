@@ -24,14 +24,14 @@ document.addEventListener("DOMContentLoaded", function(){
 div#feedback{
     position: fixed;
     transition: all .3s;
-    z-index : 9999999999;
+    z-index : 999999999;
 }
 
 div#feedback div.button{
     position: absolute;
     bottom: 0;
     right: 0;
-    background-color: var(--feedback-bg-color);
+    background-color: #000;
     width: 45px;
     height: 45px;
     line-height: 45px;
