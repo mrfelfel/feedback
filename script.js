@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function(){
 div#feedback{
     position: fixed;
     transition: all .3s;
-    z-index : 5;
+    z-index : 9999999999;
 }
 
 div#feedback div.button{
