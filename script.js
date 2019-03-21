@@ -19,10 +19,7 @@ document.addEventListener("DOMContentLoaded", function(){
     --feedback-bg-color: #fff;
 }
 
-body{
-    background-color: var(--body-color);
-    margin: 0;
-}
+
 
 div#feedback{
     position: fixed;
