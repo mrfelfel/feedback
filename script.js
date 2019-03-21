@@ -403,5 +403,28 @@ function SendToServer(){
     }))
      // HideFeedBack()
      document.getElementById('feedback').remove()
+    
+        toast('از نظر شما سپاس گذاریم')
+
 
 }
+function toast(text='', timeout=1000){
+    if(document.getElementById('toast')) return false;
+    else{
+      let div = document.createElement('div');
+      div.classList.add('toast');
+      div.innerHTML = '<pre>'+text+'</pre>';
+      div.id = 'toast';
+      document.body.appendChild(div);
+      setTimeout(() => {
+        document.getElementById('toast').classList.add('show');
+      }, 100);
+      setTimeout(() => {
+        document.getElementById('toast').classList.remove('show');
+      }, timeout+400);
+      setTimeout(()=>{
+        document.body.removeChild(document.getElementById('toast'));
+      },timeout+700)
+      return true;
+    }
+ }
