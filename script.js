@@ -32,6 +32,7 @@ div#feedback div.button{
     bottom: 0;
     right: 0;
     background-color: #000;
+    color : #ffffff;
     width: 45px;
     height: 45px;
     line-height: 45px;
